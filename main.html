@@ -1,0 +1,78 @@
+<html>
+<head>
+<TITLE>scheduler by apple cookie</TITLE>
+</head>
+<body>
+<H2>Add your schedule here</H2>
+<HR>
+<FORM METHOD="POST" ACTION="http://cspro.sogang.ac.kr/~cse20121642/cgi-bin/main.php">
+	
+	<style>
+	table, th, td {
+		border: 2px solid black;
+	}
+        th, td{
+		padding: 3px;
+	}
+	th {
+		text-align: left;
+	}
+	</style>
+	<table style = " height:35%" >
+		<tr>
+			<th>INPUT FIELD</th>
+			<th>TYPE IN</th>
+		</tr>
+		<tr>
+			<th><I>Date</I></th>
+			<th><input type="date" name= "date"></th>
+		</tr>
+		<tr>
+			<th><I>Schedule</I></th>
+			<th><input type="text" name= "text1" placeholder="title"></th>
+		</tr>
+		<tr>
+			<th><I>Memo<I></th>
+			<th><input type = "text" name = "text2" placeholder="contents"></th>
+		</tr>
+		<tr>
+			<th><I>do with friend</I></th>
+			<th><input type = "text" name = "friend" placeholder="your friend's ID"></th>
+		</tr>
+	</table>
+
+	<script>showInform();</script>
+<script>
+function showInform(){
+ // var search_tag = document.getElementById("search_tag").value;
+
+  //if(search_value.length == 0){
+    //document.getElementById("showHere").innerHTML = "type search value";
+    //return;
+  //} else {
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function(){
+      if(this.readyState == 4 && this.status == 200){
+        document.getElementById("showHere").innerHTML = this.responseText;
+      }
+    };
+
+    xhttp.open("GET","cgi-bin/table.php, true);
+    xhttp.send();
+  //}
+}
+
+//showInform();
+</script>
+
+	
+<br><INPUT TYPE="submit" NAME= "save" VALUE="save" > <P>
+</FORM>
+
+
+</body>
+</html>
+
+
